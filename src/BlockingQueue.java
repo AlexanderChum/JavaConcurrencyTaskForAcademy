@@ -7,7 +7,7 @@ public class BlockingQueue {
     }
 
     public synchronized void enqueue(Object o) throws InterruptedException {
-        while (size == items.length - 1) {
+        while (size == items.length) {
             wait();
         }
         items[size] = o;
